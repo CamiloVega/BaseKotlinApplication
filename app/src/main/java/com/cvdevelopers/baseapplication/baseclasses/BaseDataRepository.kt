@@ -2,9 +2,9 @@ package com.cvdevelopers.baseapplication.baseclasses
 
 import com.cvdevelopers.baseapplication.utils.SubscriptionManager
 
-abstract class BaseDataRepository (){
+abstract class BaseDataRepository {
 
-    val subscriptionManager = SubscriptionManager()
+    protected val subscriptionManager = SubscriptionManager()
 
     fun onResume() {
         initializeSubscriptions(subscriptionManager)
@@ -14,6 +14,6 @@ abstract class BaseDataRepository (){
         subscriptionManager.dispose()
     }
 
-    abstract fun initializeSubscriptions(subscriptionManager: SubscriptionManager)
+    protected abstract fun initializeSubscriptions(subscriptionManager: SubscriptionManager)
 
 }

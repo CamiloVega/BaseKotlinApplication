@@ -1,6 +1,7 @@
 package com.cvdevelopers.baseapplication.dependencyinjection.modules
 
-import com.cvdevelopers.baseapplication.MainActivity
+import com.cvdevelopers.baseapplication.activities.EntryActivity
+import com.cvdevelopers.baseapplication.dependencyinjection.scope.ActivityScope
 import com.cvdevelopers.baseapplication.dependencyinjection.scope.FragmentScope
 import com.cvdevelopers.baseapplication.fragments.FirstFragment
 
@@ -13,7 +14,8 @@ import dagger.android.ContributesAndroidInjector
 internal abstract class ViewBindingModule {
 
     @ContributesAndroidInjector
-    abstract fun contributeMainActivity(): MainActivity
+    @ActivityScope
+    abstract fun contributeEntryActivity(): EntryActivity
 
     @ContributesAndroidInjector
     @FragmentScope

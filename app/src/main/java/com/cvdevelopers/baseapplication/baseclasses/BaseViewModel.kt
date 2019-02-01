@@ -4,7 +4,7 @@ import com.cvdevelopers.baseapplication.utils.SubscriptionManager
 
 abstract class BaseViewModel () {
 
-    val subscriptionManager = SubscriptionManager()
+    protected val subscriptionManager = SubscriptionManager()
 
     fun onResume() {
         initializeSubscriptions(subscriptionManager)
@@ -16,8 +16,8 @@ abstract class BaseViewModel () {
         baseDataRepository()?.onPause()
     }
 
-    abstract fun initializeSubscriptions(subscriptionManager: SubscriptionManager)
+    protected abstract fun initializeSubscriptions(subscriptionManager: SubscriptionManager)
 
-    abstract fun baseDataRepository(): BaseDataRepository? // if the View model does not have a data repository, return null
+    protected abstract fun baseDataRepository(): BaseDataRepository? // if the View model does not have a data repository, return null
 
 }

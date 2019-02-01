@@ -13,7 +13,7 @@ class FirstFragmentViewModel @Inject constructor(
 
     private val dataTextModifier = BehaviorSubject.create<String>()
 
-    override fun baseDataRepository() = null//firstFragmentDataRepository
+    override fun baseDataRepository() = firstFragmentDataRepository
 
     fun observeDisplayData() = dataTextModifier as Observable<String>
 
