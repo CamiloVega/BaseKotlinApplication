@@ -6,12 +6,8 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class ApplicationModule {
+class ApplicationModule (private val application: BaseApplication) {
 
-    @Module
-    class ApplicationModule (private val application: BaseApplication) {
-
-        @Provides
-        fun providesApplication(): Application = application
-    }
+    @Provides
+    fun providesApplication(): Application = application
 }

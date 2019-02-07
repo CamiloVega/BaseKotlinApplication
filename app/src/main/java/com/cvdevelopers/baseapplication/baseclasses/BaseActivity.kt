@@ -25,6 +25,16 @@ abstract class BaseActivity: AppCompatActivity(), HasSupportFragmentInjector {
         setContentView(getResourceLayoutId())
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel()?.onResume()
+    }
+
+    override fun onPause() {
+        viewModel()?.onPause()
+        super.onPause()
+    }
+
     @LayoutRes
     abstract fun getResourceLayoutId(): Int
 
