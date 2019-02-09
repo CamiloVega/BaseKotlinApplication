@@ -4,6 +4,7 @@ import com.cvdevelopers.baseapplication.activities.EntryActivity
 import com.cvdevelopers.baseapplication.dependencyinjection.scope.ActivityScope
 import com.cvdevelopers.baseapplication.dependencyinjection.scope.FragmentScope
 import com.cvdevelopers.baseapplication.fragments.FirstFragment
+import com.cvdevelopers.baseapplication.template_generated_classes.TemplateFragment
 
 
 import dagger.Module
@@ -20,4 +21,8 @@ internal abstract class ViewBindingModule {
     @ContributesAndroidInjector
     @FragmentScope
     abstract fun contributeFirstFragment(): FirstFragment
+
+    @ContributesAndroidInjector
+    @FragmentScope
+    abstract fun contributeTemplateView(): TemplateFragment
 }
