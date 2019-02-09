@@ -6,8 +6,9 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="HARD CODED STRING :(" />
+            android:id="@+id/first_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="HARD CODED STRING :("/>
 
 </FrameLayout>

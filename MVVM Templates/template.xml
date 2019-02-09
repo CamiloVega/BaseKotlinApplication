@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <template format="5"
         revision="1"
-        name="MVVM Fragment"
+        name="MVVM + Test"
         description="Creates a new MVVM Fragment (DONT FORGET TO ADD TO VIEWBINDINGMODULE!!!)">
     
-    <category value="Fragment"/>
+    <category value="MVVM Template"/>
  
     <parameter id="className"
         name="Functionality Name"
@@ -12,6 +12,22 @@
         constraints="class|unique|nonempty"
         default="FeatureName"
         help="The name of the functionality or feature"/>
+
+<parameter
+        id="isActivity"
+        name="Activity"
+        type="boolean"
+        default="false"
+        visibility="!isFragment"
+        help="Generate a layout XML for the fragment" />
+
+    <parameter
+        id="isFragment"
+        name="Fragment"
+        type="boolean"
+        default="false"
+        visibility="!isActivity"
+        help="Generate a layout XML for the fragment" />
 
     <parameter
         id="includeLayout"
@@ -27,7 +43,7 @@
         constraints="layout|nonempty|unique"
         default="fragment_blank"
         visibility="includeLayout"
-        suggest="fragment_${classToResource(className)}"
+        suggest="${classToResource(className)}_"
         help="The name of the layout to create" />
  
     <globals file="globals.xml.ftl" />
