@@ -29,8 +29,6 @@
 
     <instantiate from="root/src/app_package/ViewModel.${ktOrJavaExt}.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${className}ViewModel.${ktOrJavaExt}" />
-
-    
                    
     <instantiate from="root/src/app_package/DataRepository.${ktOrJavaExt}.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${className}DataRepository.${ktOrJavaExt}" />

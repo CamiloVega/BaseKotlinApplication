@@ -5,6 +5,11 @@ import kotlinx.android.synthetic.main.${escapeXmlAttribute(fragmentName)}.*
 
 class ${className}Fragment: BaseFragment() {
 
+    Paste This in your ViewBindingsModule
+    @ContributesAndroidInjector
+    @FragmentScope
+    abstract fun contribute${className}View(): ${className}Fragment
+
     @Inject
     lateinit var viewModel: ${className}ViewModel
 

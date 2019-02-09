@@ -20,7 +20,15 @@ class ${className}ViewModel @Inject constructor(
 
     override fun initializeSubscriptions(subscriptionManager: SubscriptionManager) {
          subscriptionManager.apply { 
-            
+            add(
+                dataRepository.observeRepositoryData(),
+                {
+                    val data = ${className}DisplayData(it as String)
+                    publishViewData.onNext(data)
+                }, {
+                    //Implement Error Handling
+                }
+            )
         }
     }
 

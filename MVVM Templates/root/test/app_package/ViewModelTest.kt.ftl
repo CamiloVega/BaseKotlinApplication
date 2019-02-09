@@ -1,9 +1,7 @@
 package ${escapeKotlinIdentifiers(packageName)}
 
-import io.mockk.MockKAnnotations
-import io.mockk.every
+import io.mockk.*
 import io.mockk.impl.annotations.MockK
-import io.mockk.verify
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import org.junit.Before
