@@ -6,11 +6,11 @@ abstract class BaseDataRepository {
 
     protected val subscriptionManager = SubscriptionManager()
 
-    fun onResume() {
+    open fun onResume() {
         initializeSubscriptions(subscriptionManager)
     }
 
-    fun onPause() {
+    open fun onPause() {
         subscriptionManager.dispose()
     }
 

@@ -32,8 +32,8 @@ abstract class BaseFragment: Fragment() {
     }
 
     override fun onPause() {
-        super.onPause()
         viewModel()?.onPause()
+        super.onPause()
         subscriptionManager.dispose()
     }
 

@@ -54,6 +54,12 @@ dependencies {
 
     testImplementation 'org.json:json:20140107'
 
+    //MockK
+    testImplementation "io.mockk:mockk:$mockKVersion"
+
+    //Stetho
+    implementation "com.facebook.stetho:stetho:$stethoVersion"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

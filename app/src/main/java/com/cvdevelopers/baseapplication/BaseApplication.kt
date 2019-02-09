@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Application
 import com.cvdevelopers.baseapplication.dependencyinjection.components.DaggerApplicationComponent
 import com.cvdevelopers.baseapplication.dependencyinjection.modules.ApplicationModule
+import com.facebook.stetho.Stetho
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import timber.log.Timber
@@ -21,7 +22,12 @@ class BaseApplication: Application(), HasActivityInjector {
     override fun onCreate() {
         super.onCreate()
         appComponent.inject(application = this)
+        initializeComponents()
+    }
+
+    open fun initializeComponents() {
         Timber.plant(Timber.DebugTree())
+        Stetho.initializeWithDefaults(this)
     }
 
     override fun activityInjector() = this.dispatchingActivityInjector
