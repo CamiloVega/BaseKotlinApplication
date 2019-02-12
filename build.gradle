@@ -21,7 +21,7 @@ ext {
     targetSDK = 22
     buildToolsVersion = '28.0.3'
     supportLibVersion = '1.0.0'
-    constraintLayout = '1.1.2'
+    constraintLayout = '1.1.3'
     gsonVersion = '2.8.5'
     daggerVersion = '2.21'
     rxJavaVersion = '2.1.0'

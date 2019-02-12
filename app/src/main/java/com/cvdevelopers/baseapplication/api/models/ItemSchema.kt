@@ -12,7 +12,7 @@ data class ItemSchema (
     val cancelled: Boolean?,
     @SerializedName("unit_price")
     val unitPrice: String,
-    val id: Int?,
+    val id: Int,
     @SerializedName("venue_id")
     val venue_id: Int?,
     val name: String,

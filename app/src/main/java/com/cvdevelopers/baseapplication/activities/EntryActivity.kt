@@ -1,5 +1,6 @@
 package com.cvdevelopers.baseapplication.activities;
 
+import android.widget.Toast
 import com.cvdevelopers.baseapplication.R
 import com.cvdevelopers.baseapplication.baseclasses.BaseActivity
 import com.cvdevelopers.baseapplication.baseclasses.BaseViewModel
@@ -15,6 +16,14 @@ class EntryActivity : BaseActivity() {
 
     override fun initializeSubscriptions(subscriptionManager: ViewSubscriptionManager) {
         subscriptionManager.apply {
+            add (
+                viewModel.observeDisplayData(),
+                {
+                    Toast.makeText(this@EntryActivity, it.message, Toast.LENGTH_SHORT).show()
+                },{
+
+                }
+            )
 
         }
     }

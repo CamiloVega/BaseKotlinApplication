@@ -28,9 +28,11 @@ abstract class BaseActivity: AppCompatActivity(), HasSupportFragmentInjector {
     override fun onResume() {
         super.onResume()
         viewModel()?.onResume()
+        initializeSubscriptions(subscriptionManager)
     }
 
     override fun onPause() {
+        subscriptionManager.dispose()
         viewModel()?.onPause()
         super.onPause()
     }
