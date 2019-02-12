@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/menu_item_height" xmlns:tools="http://schemas.android.com/tools"
+        android:background="@drawable/menu_item_bg"
+        android:layout_margin="@dimen/spacing_s1">
+
+    <View
+            android:id="@+id/color_bar"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_s5"
+            android:background="@drawable/card_header"/>
+
+    <TextView
+            android:id="@+id/name"
+            android:contentDescription="menu_item"
+            android:layout_below="@id/color_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_s3"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:layout_marginLeft="@dimen/spacing_s2"
+            android:layout_marginRight="@dimen/spacing_s2"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_s4"
+            tools:text="ITEM NAME"/>
+
+    <TextView
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_s4"
+            android:layout_marginLeft="@dimen/spacing_s2"
+            android:layout_marginRight="@dimen/spacing_s2"
+            android:textColor="@color/grey_d"
+            android:textSize="@dimen/text_s3"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-light"
+            tools:text="$120.00"
+            android:layout_alignParentBottom="true"/>
+</RelativeLayout>
