@@ -27,7 +27,9 @@ class BaseApplication: Application(), HasActivityInjector {
 
     open fun initializeComponents() {
         Timber.plant(Timber.DebugTree())
-        Stetho.initializeWithDefaults(this)
+        if (BuildConfig.DEBUG) {
+            Stetho.initializeWithDefaults(this)
+        }
     }
 
     override fun activityInjector() = this.dispatchingActivityInjector

@@ -3,7 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
-
 android {
     compileSdkVersion rootProject.ext.compileSDK
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -13,13 +12,17 @@ android {
         targetSdkVersion rootProject.ext.targetSDK
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -29,14 +32,12 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     //android support
-    implementation "com.android.support:support-fragment:$supportLibVersion"
-    implementation "com.android.support:support-v4:$supportLibVersion"
-    implementation "com.android.support:appcompat-v7:$supportLibVersion"
-    implementation "com.android.support:support-annotations:$supportLibVersion"
+    implementation "androidx.fragment:fragment:$supportLibVersion"
+    implementation "androidx.legacy:legacy-support-v4:$supportLibVersion"
+    implementation "androidx.appcompat:appcompat:$supportLibVersion"
+    implementation "androidx.annotation:annotation:$supportLibVersion"
 
-    implementation "com.android.support.constraint:constraint-layout:$constraintLayout"
-
-    kapt "com.android.databinding:compiler:$androidDataBinding"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayout"
 
 //Dagger
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
@@ -61,8 +62,8 @@ dependencies {
     implementation "com.facebook.stetho:stetho:$stethoVersion"
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
 
     implementation 'com.jakewharton.timber:timber:4.5.1'
 
