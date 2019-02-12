@@ -9,15 +9,11 @@ import com.cvdevelopers.baseapplication.fragments.FirstFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
-
 @Module
-internal abstract class ViewBindingModule {
+internal abstract class ActivityBindingModule {
 
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector (modules = [FragmentBindingModule::class])
     @ActivityScope
     abstract fun contributeEntryActivity(): EntryActivity
 
-    @ContributesAndroidInjector
-    @FragmentScope
-    abstract fun contributeFirstFragment(): FirstFragment
 }

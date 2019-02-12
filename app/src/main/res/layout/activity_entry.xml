@@ -14,11 +14,4 @@
             android:name="com.cvdevelopers.baseapplication.fragments.FirstFragment"
             android:id="@+id/fragment"/>
 
-    <fragment
-            app:layout_constraintTop_toBottomOf="@id/fragment"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:name="com.cvdevelopers.baseapplication.template_generated_classes.TemplateFragment"
-            android:id="@+id/fragment_2"/>
 </android.support.constraint.ConstraintLayout>
