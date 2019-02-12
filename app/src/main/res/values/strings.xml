@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">BaseApplication</string>
+    <string name="selected_items">Selected Items</string>
+    <string name="clear_items">Clear Items</string>
+    <string name="total_label">total</string>
+    <string name="checkout">Checkout</string>
+    <string name="add_to_tab">Add to Tab</string>
+    <string name="exact_cash">Exact Cash</string>
+    <string name="quick_credit">Quick Credit</string>
 </resources>

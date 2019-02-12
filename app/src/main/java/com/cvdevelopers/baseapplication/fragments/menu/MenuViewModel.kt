@@ -2,6 +2,7 @@ package com.cvdevelopers.baseapplication.fragments.menu;
 
 import android.util.Log
 import com.cvdevelopers.baseapplication.R
+import com.cvdevelopers.baseapplication.api.models.ItemSchema
 import com.cvdevelopers.baseapplication.api.models.MenuSchema
 import com.cvdevelopers.baseapplication.baseclasses.BaseViewModel
 import com.cvdevelopers.baseapplication.fragments.menu.model.CategoryDisplayData
@@ -34,7 +35,7 @@ class MenuViewModel @Inject constructor(
                             val categories = data.categories.mapIndexed { index, category ->
                                 val colorIndex = index % data.categories.size
                                 val displayItems = category.items.map { item ->
-                                    MenuItemDisplayData(item.name, item.unitPrice.toCurrencyFormat(), COLOR_LIST[colorIndex],  this@MenuViewModel::onItemClicked)
+                                    MenuItemDisplayData(item.name, item.unitPrice.toCurrencyFormat(), COLOR_LIST[colorIndex],  {onItemClicked(item)})
                                 }
                                 CategoryDisplayData(category.id, category.name, displayItems)
                             }
@@ -48,8 +49,8 @@ class MenuViewModel @Inject constructor(
         }
     }
 
-    fun onItemClicked(selectedItem: MenuItemDisplayData) {
-//        dataRepository.addItemToCart(itemId) TODO (This is where we decide what to send to the data repository so it sends it to the CartDataStore)
+    fun onItemClicked(selectedItem: ItemSchema) {
+        dataRepository.addItemToCart(selectedItem)
         Log.i(LOG_TAG, "Item ${selectedItem.name} was selected")
     }
 

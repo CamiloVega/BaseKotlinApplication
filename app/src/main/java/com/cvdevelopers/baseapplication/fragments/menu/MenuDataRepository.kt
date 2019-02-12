@@ -1,13 +1,15 @@
 package com.cvdevelopers.baseapplication.fragments.menu;
 
+import com.cvdevelopers.baseapplication.api.data.stores.CartDataStore
 import com.cvdevelopers.baseapplication.api.data.stores.MenuDataStore
+import com.cvdevelopers.baseapplication.api.models.ItemSchema
 import com.cvdevelopers.baseapplication.baseclasses.BaseDataRepository
 import com.cvdevelopers.baseapplication.utils.SubscriptionManager
 import io.reactivex.Observable
 import io.reactivex.subjects.BehaviorSubject
 import javax.inject.Inject
 
-class MenuDataRepository @Inject constructor(val menuDataStore: MenuDataStore) : BaseDataRepository() {
+class MenuDataRepository @Inject constructor(val menuDataStore: MenuDataStore, val cartDataStore: CartDataStore) : BaseDataRepository() {
 
     private val publishViewModelData = BehaviorSubject.create<Any>()
     private var locationMenuId: String? = null
@@ -32,8 +34,8 @@ class MenuDataRepository @Inject constructor(val menuDataStore: MenuDataStore) :
 
     fun observeRepositoryData() = publishViewModelData as Observable<Any>
 
-    fun addItemToCart(itemId: Int) {
-        TODO("not implemented")
+    fun addItemToCart(selectedItem: ItemSchema) {
+        cartDataStore.addItemToCart(selectedItem)
     }
 
     companion object {

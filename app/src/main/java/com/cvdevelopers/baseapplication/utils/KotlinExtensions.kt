@@ -13,3 +13,7 @@ fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false):
 fun String.toCurrencyFormat(): String {
     return "$${BigDecimal.valueOf(this.toDouble()).setScale(2)}"
 }
+
+fun BigDecimal.toCurrencyFormat(): String {
+    return "$${this.setScale(2)}"
+}
