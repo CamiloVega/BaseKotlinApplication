@@ -36,7 +36,7 @@ class MenuViewModel @Inject constructor(
                                 val displayItems = category.items.map { item ->
                                     MenuItemDisplayData(item.name, item.unitPrice.toCurrencyFormat(), COLOR_LIST[colorIndex],  this@MenuViewModel::onItemClicked)
                                 }
-                                CategoryDisplayData(category.name, displayItems)
+                                CategoryDisplayData(category.id, category.name, displayItems)
                             }
                             publishViewData.onNext(MenuDisplayData(categories))
                         }
