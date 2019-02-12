@@ -22,7 +22,7 @@ class MenuDataRepository @Inject constructor(val menuDataStore: MenuDataStore) :
         subscriptionManager.apply {
             add(
                 menuDataStore.observeMenus(), {
-                    locationMenuId?.let { locationId ->
+                    locationMenuId.let { locationId ->
                         it[locationId]?.let { menu -> publishViewModelData.onNext(menu) }
                     }
                 }
